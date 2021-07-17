@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
       tbl.text('userName', 128).unique().notNullable();
       tbl.text('password', 128).notNullable();
       tbl.text('profilePic', 128);
+      tbl.text('fName', 128);
+      tbl.text('lName', 128);
     });
   };
   
