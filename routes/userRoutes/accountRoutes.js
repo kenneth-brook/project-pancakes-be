@@ -4,7 +4,7 @@ const db = require('../../config');
 const router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/accounts', (req, res) => {
     db('accounts')
     .then(accounts => {
       res.json(accounts);
