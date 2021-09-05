@@ -34,11 +34,12 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host : 'https://premium78.web-hosting.com/',
+      user : 'tkbcwzsc_pancakes',
+      password : 'Wizard1972!',
+      database : 'tkbcwzsc_pancakes'
     },
     pool: {
       min: 2,
