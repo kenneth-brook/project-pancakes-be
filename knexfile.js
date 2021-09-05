@@ -35,19 +35,13 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: {
-      host : 'https://premium78.web-hosting.com/',
-      user : 'tkbcwzsc_pancakes',
-      password : 'Wizard1972!',
-      database : 'tkbcwzsc_pancakes'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    connection: process.env.DATABASE_URL,
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      directory: __dirname + '/data/migrations'
+    },
+    seeds:{ 
+      directory:  __dirname + '/data/seeds'
+    },
+  },
 
 };
