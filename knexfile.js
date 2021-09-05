@@ -1,3 +1,10 @@
+const knex = require("knex");
+const parse = require("pg-connection-string").parse;
+
+
+const pgconfig = parse(process.env.DATABASE_URL);
+
+pgconfig.ssl = { rejectUnauthorized: false };
 // Update with your config settings.
 
 module.exports = {
@@ -16,26 +23,9 @@ module.exports = {
     }
   },
 
-  staging: {
-    client: 'mysql',
-    connection: {
-      host : 'https://premium78.web-hosting.com/',
-      user : 'tkbcwzsc_pancakes',
-      password : 'Wizard1972!',
-      database : 'tkbcwzsc_pancakes'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: pgconfig,
     migrations: {
       directory: __dirname + '/data/migrations'
     },
