@@ -6,9 +6,9 @@ exports.up = function(knex, Promise) {
       // creates a text field called name which is both required and unique
       tbl.text('userName', 128).unique().notNullable();
       tbl.text('password', 128).notNullable();
-      tbl.text('profilePic', 128);
-      tbl.text('fName', 128);
-      tbl.text('lName', 128);
+      tbl.text('profilePic', 128).useNullAsDefault();
+      tbl.text('fName', 128).useNullAsDefault();
+      tbl.text('lName', 128).useNullAsDefault();
     });
   };
   
