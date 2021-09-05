@@ -34,7 +34,7 @@ module.exports = {
   },
 
   production: {
-    client: 'mysql',
+    client: 'pg',
     connection: {
       host : 'https://premium78.web-hosting.com/',
       user : 'tkbcwzsc_pancakes',
