@@ -5,6 +5,8 @@ const accountRoutes = require('./routes/userRoutes/accountRoutes')
 const server = express(); // creates the server
 const port = process.env.PORT || 5000;
 
+server.use(cors());
+
 // handle requests to the root of the api, the / route
 server.get('/', (req, res) => {
     res.send('Hello from Express');
