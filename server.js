@@ -1,4 +1,5 @@
 const express = require('express'); // import the express package
+const cors = require('cors')
 
 const accountRoutes = require('./routes/userRoutes/accountRoutes')
 
